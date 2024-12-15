@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-img{
+  background-image: url('../../public/asifa.jpg');
+}
+.promo-1{
+  background-image: url('../../public/pic.jpg');
+}
+.promo-2{
+  background-image: url('../../public/jewellery.webp');
+}
