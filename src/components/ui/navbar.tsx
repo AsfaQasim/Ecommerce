@@ -1,42 +1,36 @@
+"use client";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from 'next/link';
 import { NavigationMenuDemo } from "../navlinks";
+import { NavigationMenu} from "./navigation-menu";
 import Image from 'next/image';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Toggle menu visibility on small screens
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="navbar bg-slate-50 max-w-full">
       {/* Navbar Start */}
       <div className="navbar-start">
         {/* Hamburger Menu for Small Screens */}
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="lg:hidden p-2">
+        <div className="dropdown lg:hidden">
+          <div tabIndex={0} role="button" className="p-2" onClick={handleMenuToggle}>
             <GiHamburgerMenu className="text-xl" />
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${menuOpen ? "block" : "hidden"}`}
           >
-
-
-
-            <li><Link href="#">Home</Link></li>
-            <li>
-              <Link href="#">Women</Link>
-              <ul className="p-2">
-                <li><Link href="#">Tops</Link></li>
-                <li><Link href="#">Pants</Link></li>
-              </ul>
-            </li>
-            <li><Link href="#">Accessories/Jewellery</Link></li>
-            <li><Link href="#">Shoes</Link></li>
-
-            <li><Link href="#">Contact</Link></li>
-
-
             <li><Link href="/">Home</Link></li>
             <li>
-              <Link href="/">Women</Link>
+              <Link href="#">Women</Link>
               <ul className="p-2">
                 <li><Link href="/tops">Tops</Link></li>
                 <li><Link href="/pants">Pants</Link></li>
@@ -44,7 +38,7 @@ const Navbar = () => {
             </li>
             <li><Link href="/accessories">Accessories/Jewellery</Link></li>
             <li><Link href="/shoes">Shoes</Link></li>
-
+            <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
 
