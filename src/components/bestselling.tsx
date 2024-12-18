@@ -9,6 +9,8 @@ const Bestselling = () => {
       title: "T Shirt",
       description: "White T-shirt",
       price: 125,
+      category: "Tshirt",
+      slug: "white-tshirt"
     },
     {
       src: "/blacktshirt.jpg",
@@ -16,6 +18,8 @@ const Bestselling = () => {
       title: "T Shirt",
       description: "Black T-shirt",
       price: 100,
+       category: "Tshirt",
+      slug: "black-tshirt"
     },
     {
       src: "/pumpy.jpg",
@@ -23,6 +27,8 @@ const Bestselling = () => {
       title: "Pumpy",
       description: "Decent Pumpy",
       price: 150,
+       category: "pumpy",
+      slug: "pumpy"
     },
   ];
 
@@ -45,6 +51,8 @@ const Bestselling = () => {
             title={item.title}
             description={item.description}
             price={item.price}
+            category= {item.category}
+            slug=  {item.slug}
           />
         ))}
       </div>

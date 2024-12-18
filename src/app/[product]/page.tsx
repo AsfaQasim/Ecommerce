@@ -10,6 +10,8 @@ const Product = () => {
       title: "T Shirt",
       description: "White T-shirt",
       price: 125,
+      Category : "white-tshirt",
+      slug: "white-shirt"
     },
     {
       src: "/blacktshirt.jpg",
@@ -17,6 +19,8 @@ const Product = () => {
       title: "T Shirt",
       description: "Black T-shirt",
       price: 100,
+       Category : "black-tshirt",
+      slug: "black-shirt"
     },
     {
       src: "/pumpy.jpg",
@@ -24,6 +28,8 @@ const Product = () => {
       title: "Pumpy",
       description: "Decent Pumpy",
       price: 150,
+       Category : "pumpy",
+      slug: "pumpy"
     },
     {
         src: "/tshirt.jpeg",
@@ -31,6 +37,8 @@ const Product = () => {
         title: "T Shirt",
         description: "White T-shirt",
         price: 125,
+        Category : "pumpy",
+      slug: "pumpy"
       },
       {
         src: "/blacktshirt.jpg",
@@ -38,6 +46,8 @@ const Product = () => {
         title: "T Shirt",
         description: "Black T-shirt",
         price: 100,
+        Category : "pumpy",
+      slug: "pumpy"
       },
       {
         src: "/pumpy.jpg",
@@ -45,6 +55,8 @@ const Product = () => {
         title: "Pumpy",
         description: "Decent Pumpy",
         price: 150,
+        Category : "pumpy",
+      slug: "pumpy"
       },
       {
         src: "/tshirt.jpeg",
@@ -52,6 +64,8 @@ const Product = () => {
         title: "T Shirt",
         description: "White T-shirt",
         price: 125,
+        Category : "pumpy",
+      slug: "pumpy"
       },
       {
         src: "/blacktshirt.jpg",
@@ -59,6 +73,8 @@ const Product = () => {
         title: "T Shirt",
         description: "Black T-shirt",
         price: 100,
+        Category : "pumpy",
+      slug: "pumpy"
       },
       {
         src: "/pumpy.jpg",
@@ -66,6 +82,8 @@ const Product = () => {
         title: "Pumpy",
         description: "Decent Pumpy",
         price: 150,
+        Category : "pumpy",
+      slug: "pumpy"
       },
   ];
 
@@ -88,7 +106,10 @@ const Product = () => {
             title={item.title}
             description={item.description}
             price={item.price}
-          />
+            category= {item.Category}
+            slug= {item.slug}
+
+                     />
         ))}
       </div>
     </div>

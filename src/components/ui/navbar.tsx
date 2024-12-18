@@ -3,7 +3,6 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from 'next/link';
 import { NavigationMenuDemo } from "../navlinks";
-import { NavigationMenu} from "./navigation-menu";
 import Image from 'next/image';
 import { useState } from 'react';
 

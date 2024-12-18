@@ -16,7 +16,7 @@ const Categories = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16 px-4 sm:px-8 lg:px-10">
         {/* Category 1 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="#">
+          <Link href="/tops">
             <Image
               src={"/top.jpg"}
               alt="tops"
@@ -36,7 +36,7 @@ const Categories = () => {
 
         {/* Category 2 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="#">
+          <Link href="/pants">
             <Image
               src={"/pants.webp"}
               alt="pants"
@@ -56,7 +56,7 @@ const Categories = () => {
 
         {/* Category 3 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="#">
+          <Link href="/jewellery">
             <Image
               src={"/jj.jpeg"}
               alt="jewellery"
@@ -76,7 +76,7 @@ const Categories = () => {
 
         {/* Category 4 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="#">
+          <Link href="/shoes">
             <Image
               src={"/shoes.jpeg"}
               alt="shoes"
