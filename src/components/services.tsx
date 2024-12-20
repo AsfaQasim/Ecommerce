@@ -67,7 +67,7 @@ const Services = () => {
                   24/7 Support
                 </h2>
                 <p className="scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight first:mt-0 hover:text-orange-500 transition-colors duration-300">
-                  We're here for you anytime.
+                  We&apos;re here for you anytime.
                 </p>
               </div>
             </div>

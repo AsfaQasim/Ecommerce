@@ -14,7 +14,7 @@ const Slug = () => {
           {/* Left Side: Image */}
           <div className="lg:w-1/2 w-full flex flex-col items-center">
             {/* Main Image */}
-            <img
+            <Image
               alt="ecommerce"
               className="lg:w-3/4 w-full lg:h-auto h-[400px] object-cover object-center rounded-md shadow-md"
               src={path}
