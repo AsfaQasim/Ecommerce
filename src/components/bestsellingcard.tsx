@@ -23,7 +23,7 @@ const Bestsellingcard = ({
   return (
     <div className="card bg-base-100 w-96 shadow-xl rounded-lg">
       {/* Wrapping Image and Title in Link */}
-      <Link href={`/${category}/${slug}`}>
+      
         <Image
           src={src}
           alt={alt}
@@ -31,13 +31,13 @@ const Bestsellingcard = ({
           height={600}
           className="cursor-pointer"
         />
-      </Link>
+      
       <div className="card-body rounded-lg flex flex-col items-start">
-        <Link href={`/${category}/${slug}`}>
+        
           <h2 className="card-title text-2xl font-bold cursor-pointer">
             {title}
           </h2>
-        </Link>
+        
         <p className="text-gray-500">{description}</p>
         <p className="text-gray-500 font-medium">${price}</p>
 
