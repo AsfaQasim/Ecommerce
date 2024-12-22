@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { FaCartArrowDown, FaHeart } from "react-icons/fa";
@@ -16,54 +17,60 @@ const Bestsellingcard = ({
   alt: string;
   title: string;
   description: string;
-  price: number;
+  price?: number;
   category: string;
   slug: string;
 }) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-xl rounded-lg">
-      {/* Wrapping Image and Title in Link */}
-      
+    <div className="card bg-base-100 w-80 shadow-xl rounded-lg overflow-hidden">
+      {/* Wrap the entire card in a Link to avoid nesting */}
+      <Link href={`/products/${slug}`}>
+        {/* Image as part of the link */}
         <Image
           src={src}
           alt={alt}
-          width={600}
-          height={600}
-          className="cursor-pointer"
+          width={320} // Adjusted width for card image
+          height={320} // Adjusted height for card image
+          className="cursor-pointer object-cover"
         />
-      
-      <div className="card-body rounded-lg flex flex-col items-start">
-        
-          <h2 className="card-title text-2xl font-bold cursor-pointer">
+        <div className="card-body rounded-lg flex flex-col items-start p-4">
+          {/* Title as part of the link */}
+          <h2 className="card-title text-xl font-semibold cursor-pointer">
             {title}
           </h2>
-        
-        <p className="text-gray-500">{description}</p>
-        <p className="text-gray-500 font-medium">${price}</p>
+          <p className="text-gray-500 text-sm">{description}</p>
 
-        <div className="card-actions flex justify-evenly w-full mt-4">
-          {/* Buy Now Button */}
-          <button
-            className="text-xl font-semibold tracking-tight px-3 py-3
-             flex items-center justify-center outline outline-offset-2 outline-orange-900 hover:rounded-3xl duration-300
-             hover:outline-orange-600 group"
-          >
-            <FaHeart className="mr-2" />
-            Buy Now
-          </button>
-
-          {/* Add to Cart Button */}
-          <button
-            className="text-xl font-semibold tracking-tight px-3 py-3
-             flex items-center justify-center outline outline-offset-2 outline-orange-900 hover:rounded-3xl
-              duration-300 hover:outline-orange-600 group"
-          >
-            <FaCartArrowDown className="mr-2" />
-            Add to cart
-          </button>
+          {/* Conditional rendering for price */}
+          <p className="text-gray-500 font-medium mt-2">
+            {price ? `$${price.toFixed(2)}` : "Price Unavailable"}
+          </p>
         </div>
-      </div>
-    </div>
+      </Link>
+
+      {/* Card Actions: Buy and Add to Cart buttons */}
+      <div className="card-actions w-full p-4 flex gap-4">
+  {/* Buy Now Button */}
+  {price ? (
+    <button
+      className="btn btn-sm text-lg font-semibold px-4 py-2 flex items-center justify-center outline outline-offset-2 outline-orange-900 hover:rounded-3xl duration-300 hover:outline-orange-600 group"
+      aria-label={`Buy ${title} now`}
+    >
+      <FaHeart className="mr-2" />
+      Buy Now
+    </button>
+  ) : null}
+
+  {/* Add to Cart Button */}
+  <button
+    className="btn btn-sm text-lg font-semibold px-4 py-2 flex items-center justify-center outline outline-offset-2 outline-orange-900 hover:rounded-3xl duration-300 hover:outline-orange-600 group"
+    aria-label={`Add ${title} to cart`}
+  >
+    <FaCartArrowDown className="mr-2" />
+    Add to cart
+  </button>
+</div>
+
+  </div>
   );
 };
 

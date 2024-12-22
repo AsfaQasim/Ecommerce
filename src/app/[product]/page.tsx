@@ -1,32 +1,58 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import { useParams } from "next/navigation";
+import Link from "next/link"; // Ensure you're using the correct Link component
 import Bestsellingcard from "@/components/bestsellingcard";
-import { PantProduct, products, topProducts } from "@/myproduct/product";
 
+import {
+  jewelleryProduct,
+  PantProduct,
+  shoesProduct,
+  topProduct,
+} from "@/myproduct/product";
+
+// Define the Product interface
 interface Product {
   src: string;
   alt: string;
   title: string;
   description: string;
-  price: number;
+  price?: number;
   Category: string;
   slug: string;
   id: string;
 }
 
-const Product = ({ params }: { params: { product: string } }) => {
+const ProductPage = () => {
+  const params = useParams();
+  const { product } = useParams();
+  const productCategory = params?.product; 
   const [productList, setProductList] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (params.product === "tops") {
-      setProductList(topProducts);
-    } else if (params.product === "pants") {
-      setProductList(PantProduct);
-    } else if (params.product === "all") {
-      setProductList(products);
+    if (!productCategory) return;
+
+    // Dynamically update the product list based on category
+    switch (productCategory) {
+      case "tops":
+        setProductList(topProduct || []);
+        break;
+      case "pants":
+        setProductList(PantProduct || []);
+        break;
+      case "accessories":
+        setProductList(jewelleryProduct || []);
+        break;
+      case "shoes":
+        setProductList(shoesProduct || []);
+        break;
+      default:
+        setProductList([]);
     }
-  }, [params.product]);
+
+    setIsLoading(false); // Update loading state
+  }, [productCategory]);
 
   return (
     <div className="container mx-auto">
@@ -34,28 +60,40 @@ const Product = ({ params }: { params: { product: string } }) => {
       <div className="flex justify-center items-center mb-16 mt-16 px-4">
         <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl text-center">
           Our Categories:{" "}
-          {params.product.charAt(0).toUpperCase() + params.product.slice(1)}
+          {productCategory
+            ? productCategory.charAt(0).toUpperCase() + productCategory.slice(1)
+            : "Unknown"}
         </p>
       </div>
 
       {/* Products Grid */}
-      <div className="flex flex-wrap justify-center gap-5">
-        {productList.map((item, i) => (
-          <Link key={i} href={`/${params.product}/${item.id}`}>
-            <Bestsellingcard
-              src={item.src}
-              alt={item.alt}
-              title={item.title}
-              description={item.description}
-              price={item.price}
-              category={item.Category}
-              slug={item.slug}
-            />
-          </Link>
-        ))}
+      <div className="flex flex-wrap justify-evenly gap-5">
+        {!isLoading && productList.length > 0 ? (
+          productList.map((item) => (
+            // Use Link directly without an additional <a> tag
+            <Link key={item.id} href={`/${productCategory}/${item.id}`}>
+              {/* Pass the card content without wrapping in <a> */}
+              <Bestsellingcard
+                src={item.src}
+                alt={item.alt}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                category={item.Category}
+                slug={item.slug}
+              />
+            </Link>
+          ))
+        ) : (
+          <div className="text-center mt-20">
+            <p className="text-lg font-semibold">
+              {isLoading ? "Loading..." : "No products found."}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Product;
+export default ProductPage;
