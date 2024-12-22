@@ -10,7 +10,6 @@ const Bestsellingcard = ({
   title,
   description,
   price,
-  category,
   slug,
 }: {
   src: string;

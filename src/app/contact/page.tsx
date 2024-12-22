@@ -1,6 +1,5 @@
-import { Link } from 'lucide-react';
+
 import React from 'react'
-import { FaFacebook } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -15,7 +14,7 @@ const Contact = () => {
           >
             <h1 style={{ color: "#333" }}>Contact Us</h1>
             <p style={{ maxWidth: "600px", margin: "0 auto", color: "#666" }}>
-              Have questions, feedback, or need assistance? We're here to help!
+              Have questions, feedback, or need assistance? We&apos;re here to help!
               Please fill out the form below or use the provided contact details to
               reach us.
             </p>

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Link from "next/link"; // Ensure you're using the correct Link component
+import Link from "next/link"; 
 import Bestsellingcard from "@/components/bestsellingcard";
 
 import {
@@ -25,7 +25,6 @@ interface Product {
 
 const ProductPage = () => {
   const params = useParams();
-  const { product } = useParams();
   const productCategory = params?.product; 
   const [productList, setProductList] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +50,7 @@ const ProductPage = () => {
         setProductList([]);
     }
 
-    setIsLoading(false); // Update loading state
+    setIsLoading(false); 
   }, [productCategory]);
 
   return (
@@ -60,7 +59,7 @@ const ProductPage = () => {
       <div className="flex justify-center items-center mb-16 mt-16 px-4">
         <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl text-center">
           Our Categories:{" "}
-          {productCategory
+          {typeof productCategory === "string"
             ? productCategory.charAt(0).toUpperCase() + productCategory.slice(1)
             : "Unknown"}
         </p>
@@ -70,9 +69,9 @@ const ProductPage = () => {
       <div className="flex flex-wrap justify-evenly gap-5">
         {!isLoading && productList.length > 0 ? (
           productList.map((item) => (
-            // Use Link directly without an additional <a> tag
+          
             <Link key={item.id} href={`/${productCategory}/${item.id}`}>
-              {/* Pass the card content without wrapping in <a> */}
+             
               <Bestsellingcard
                 src={item.src}
                 alt={item.alt}

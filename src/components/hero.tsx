@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { IoIosMailUnread } from "react-icons/io";
-import Typewriter from "typewriter-effect";
+
 
 const Hero = () => {
   return (
