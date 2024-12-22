@@ -18,7 +18,7 @@ const Categories = () => {
         <div className="relative group w-full aspect-square overflow-hidden">
           <Link href="/tops">
             <Image
-              src={"/top.jpg"}
+              src="/top.jpg"
               alt="tops"
               layout="fill"
               objectFit="cover"
@@ -38,7 +38,7 @@ const Categories = () => {
         <div className="relative group w-full aspect-square overflow-hidden">
           <Link href="/pants">
             <Image
-              src={"/pants.webp"}
+              src="/pants.webp"
               alt="pants"
               layout="fill"
               objectFit="cover"
@@ -56,9 +56,9 @@ const Categories = () => {
 
         {/* Category 3 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="/jewellery">
+          <Link href="/accessories">
             <Image
-              src={"/jj.jpeg"}
+              src="/jj.jpeg"
               alt="jewellery"
               layout="fill"
               objectFit="cover"
@@ -78,7 +78,7 @@ const Categories = () => {
         <div className="relative group w-full aspect-square overflow-hidden">
           <Link href="/shoes">
             <Image
-              src={"/shoes.jpeg"}
+              src="/shoes.jpeg"
               alt="shoes"
               layout="fill"
               objectFit="cover"

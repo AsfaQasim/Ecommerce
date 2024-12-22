@@ -76,7 +76,7 @@ const Contact = () => {
                   style={{
                     padding: "0.75rem",
                     border: "none",
-                    backgroundColor:  "orange",
+                    backgroundColor:  "#FFBD73",
                     color: "white",
                     fontWeight: "bold",
                     cursor: "pointer",

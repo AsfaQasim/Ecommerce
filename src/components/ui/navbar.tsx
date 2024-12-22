@@ -1,10 +1,9 @@
 "use client";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import Link from 'next/link';
-import { NavigationMenuDemo } from "../navlinks";
-import Image from 'next/image';
-import { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,59 +24,88 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${menuOpen ? "block" : "hidden"}`}
+            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${
+              menuOpen ? "block" : "hidden"
+            }`}
           >
-            <Link href="/">
-            <li>Home</li></Link>
+            <li>
+              {/* Highlighted "Home" Link */}
+              <Link href="/">
+                <span className="font-bold text-myOrange">Home</span>
+              </Link>
+            </li>
             <li>
               <Link href="#">Women</Link>
               <ul className="p-2">
-                <li><Link href="/tops">Tops</Link></li>
-                <li><Link href="/pants">Pants</Link></li>
+                <li>
+                  <Link href="/tops">Tops</Link>
+                </li>
+                <li>
+                  <Link href="/pants">Pants</Link>
+                </li>
               </ul>
             </li>
-            <li><Link href="/accessories">Accessories/Jewellery</Link></li>
-            <li><Link href="/shoes">Shoes</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li>
+              <Link href="/accessories">Accessories/Jewellery</Link>
+            </li>
+            <li>
+              <Link href="/shoes">Shoes</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
-        {/* Logo for Large Screens */}
-        <Image
-          src="/Aq_logo.jpg"
-          alt="logo"
-          className="hidden lg:block ml-4"
-          width={100}
-          height={100}
-        />
+        {/* Logo */}
+        <Link href="/">
+          <Image
+            src="/Aq_logo.jpg"
+            alt="logo"
+            className="ml-4 cursor-pointer"
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
 
       {/* Navbar Center */}
-      <div className="navbar-center">
-        {/* Logo for Small Screens */}
-        <Image
-          src="/Aq_logo.jpg"
-          alt="logo"
-          className="block lg:hidden ml-4"
-          width={100}
-          height={100}
-        />
-        {/* Navigation Links for Large Screens */}
-        <div className="hidden lg:flex">
-          <NavigationMenuDemo />
-        </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-4">
+          {/* Highlighted "Home" Link */}
+          <li>
+            <Link href="/">
+              <span className="font-bold text-myOrange">Home</span>
+            </Link>
+          </li>
+          <li tabIndex={0}>
+            <Link href="#">Women</Link>
+            <ul className="p-2 bg-slate-50 shadow-md">
+              <li>
+                <Link href="/tops">Tops</Link>
+              </li>
+              <li>
+                <Link href="/pants">Pants</Link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <Link href="/accessories">Accessories/Jewellery</Link>
+          </li>
+          <li>
+            <Link href="/shoes">Shoes</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
       </div>
 
       {/* Navbar End */}
       <div className="navbar-end">
         {/* Cart Icon */}
-        <Link href={'/cart'}>
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle ml-2 lg:ml-8 cursor-pointer hover:bg-myOrange duration-300"
-          >
+        <Link href="/cart">
+          <div className="btn btn-ghost btn-circle cursor-pointer hover:bg-myOrange duration-300">
             <div className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,12 +124,9 @@ const Navbar = () => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </div>
-        
-          </div>
-          </Link>
-        </div>
+        </Link>
       </div>
-   
+    </div>
   );
 };
 
