@@ -36,9 +36,9 @@ const Categories = () => {
 
         {/* Category 2 */}
         <div className="relative group w-full aspect-square overflow-hidden">
-          <Link href="/pntss">
+          <Link href="/pants">
             <Image
-              src="/pants.webp"
+              src="/pntss.jpg"
               alt="pants"
               layout="fill"
               objectFit="cover"
