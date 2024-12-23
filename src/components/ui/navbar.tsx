@@ -41,7 +41,6 @@ const Navbar = () => {
             </li>
             <li><Link href="/accessories" className="hover:text-myOrange">Accessories/Jewellery</Link></li>
             <li><Link href="/shoes" className="hover:text-myOrange">Shoes</Link></li>
-            <li><Link href="/about Us" className="hover:text-myOrange">About US</Link></li>
             <li><Link href="/contact" className="hover:text-myOrange">Contact</Link></li>
           </ul>
         </div>
@@ -80,7 +79,6 @@ const Navbar = () => {
           </li>
           <li><Link href="/accessories" className="hover:text-myOrange">Accessories/Jewellery</Link></li>
           <li><Link href="/shoes" className="hover:text-myOrange">Shoes</Link></li>
-          <li><Link href="/aboutUs" className="hover:text-myOrange">About us</Link></li>
           <li><Link href="/contact" className="hover:text-myOrange">Contact</Link></li>
         </ul>
       </div>

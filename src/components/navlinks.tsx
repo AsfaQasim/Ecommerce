@@ -1,9 +1,7 @@
-"use client";
-
+"use client"; // To ensure the component is rendered client-side
 import * as React from "react";
 import Link from "next/link";
-
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"; // Assuming you have a utility for conditional classes
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,6 +12,7 @@ import {
   navigationMenuTriggerStyle,
 } from "../components/ui/navigation-menu";
 
+// List of available components
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Tops",
@@ -38,6 +37,9 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function NavigationMenuDemo() {
+  // Condition to check if "About Us" route exists
+  const aboutRouteIsDefined = true; // Change this based on your setup
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -57,12 +59,19 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
+        {/* Conditionally render the "About Us" link */}
+        {aboutRouteIsDefined && (
+          <NavigationMenuItem>
+            <Link href="/about" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                About Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        )}
+
         <NavigationMenuItem>
-          <Link href="/aboutUs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About
-            </NavigationMenuLink>
-          </Link>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Contact
@@ -74,7 +83,8 @@ export function NavigationMenuDemo() {
   );
 }
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+// List Item Component
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>( 
   ({ className, title, children, ...props }, ref) => {
     return (
       <li>
