@@ -41,21 +41,21 @@ import React from 'react'
             <h2 style={{ color: "#333", marginBottom: "1rem" }}>Why Choose Us?</h2>
             <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
               <div style={{ maxWidth: "250px" }}>
-                <h3 style={{ color: "#007BFF" }}>Wide Range of Products</h3>
+                <h3 style={{ color: "#FFBD73" }}>Wide Range of Products</h3>
                 <p style={{ color: "#666" }}>
                   From fashion to electronics, home décor to personal care, we offer
                   everything under one roof.
                 </p>
               </div>
               <div style={{ maxWidth: "250px" }}>
-                <h3 style={{ color: "#007BFF" }}>Quality Guarantee</h3>
+                <h3 style={{ color: "#FFBD73" }}>Quality Guarantee</h3>
                 <p style={{ color: "#666" }}>
                   We only partner with trusted brands and vendors to ensure top
                   quality for our customers.
                 </p>
               </div>
               <div style={{ maxWidth: "250px" }}>
-                <h3 style={{ color: "#007BFF" }}>Customer Support</h3>
+                <h3 style={{ color: "#FFBD73" }}>Customer Support</h3>
                 <p style={{ color: "#666" }}>
                   Our dedicated support team is here to help you 24/7 with any
                   queries or concerns.

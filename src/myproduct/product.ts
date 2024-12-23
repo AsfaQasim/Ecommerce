@@ -31,16 +31,17 @@ export const products = [
       id: "whiteTop",
     },
     {
-      src: "/Tops3.jpg",
+      src: "/top3.jpg",
       alt: "top",
       title: "Fancy Top",
       description: "This fancy top combines modern style with a touch of glam. Perfect for parties or special events, it&apos;s designed to make a statement.",
+      price:220,
       Category: "top",
       slug: "fancy-top",
       id: "fancytop",
     },
     {
-      src: "/Tops4.jpg",
+      src: "/Topss4.jpg",
       alt: "top",
       title: "Printed top",
       description: "A floral-printed top that exudes charm and vibrancy. Its playful design is great for summer outings and adds a cheerful vibe to your style.",
@@ -50,7 +51,7 @@ export const products = [
       id: "printedtop",
     },
     {
-      src: "/Topsss5.jpeg",
+      src: "/Topsss5ss.jpeg",
       alt: "top",
       title: "Simple Top",
       description: "Keep it effortlessly stylish with this simple top. Designed for comfort and versatility, it&apos;s perfect for everyday wear.",
@@ -90,7 +91,7 @@ export const products = [
       id: "decentPumpy",
     },
     {
-      src: "/pants.webp",
+      src: "/pntss.jpg",
       alt: "pants",
       title: "Pants",
       description: "Stylish PantsModern and sleek, these pants are crafted for a stylish look. Perfect for casual or smart-casual occasions, they pair seamlessly with any top.",
@@ -176,7 +177,7 @@ export const products = [
   
   export const PantProduct = [
     {
-      src: "/pants.webp",
+      src: "/pntss.jpg",
       alt: "pants",
       title: "Pants",
       description: "Stylish PantsModern and sleek, these pants are crafted for a stylish look. Perfect for casual or smart-casual occasions, they pair seamlessly with any top.",
@@ -231,15 +232,16 @@ export const products = [
       id: "whiteTop",
     },
     {
-      src: "/Tops3.jpg",
+      src: "/top3.jpg",
       alt: "top",
       title: "Fancy Top",
       description: "This fancy top combines modern style with a touch of glam. Perfect for parties or special events, it&apos;s designed to make a statement.",
+      price:220,
       Category: "top",
       slug: "fancy-top",
       id: "fancytop",
     },
-    {src: "/Tops4.jpg",
+    {src: "/Topss4.jpg",
       alt: "top",
       title: "Printed top",
       description: "A floral-printed top that exudes charm and vibrancy. Its playful design is great for summer outings and adds a cheerful vibe to your style.",
@@ -249,7 +251,7 @@ export const products = [
       id: "printedtop",
     },
     {
-      src: "/Topsss5.jpeg",
+      src: "/Topsss5ss.jpeg",
       alt: "top",
       title: "Simple Top",
       description: "Keep it effortlessly stylish with this simple top. Designed for comfort and versatility, it&apos;s perfect for everyday wear.",

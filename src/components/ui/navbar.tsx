@@ -1,6 +1,7 @@
 "use client";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineDown } from "react-icons/ai";  // Import the dropdown icon
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -24,36 +25,24 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${
-              menuOpen ? "block" : "hidden"
-            }`}
+            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${menuOpen ? "block" : "hidden"}`}
           >
             <li>
-              {/* Highlighted "Home" Link */}
               <Link href="/">
-                <span className="font-bold text-myOrange">Home</span>
+                <span className="font-bold hover:text-myOrange">Home</span>
               </Link>
             </li>
             <li>
               <Link href="#">Women</Link>
               <ul className="p-2">
-                <li>
-                  <Link href="/tops">Tops</Link>
-                </li>
-                <li>
-                  <Link href="/pants">Pants</Link>
-                </li>
+                <li><Link href="/tops">Tops</Link></li>
+                <li><Link href="/pants">Pants</Link></li>
               </ul>
             </li>
-            <li>
-              <Link href="/accessories">Accessories/Jewellery</Link>
-            </li>
-            <li>
-              <Link href="/shoes">Shoes</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
+            <li><Link href="/accessories" className="hover:text-myOrange">Accessories/Jewellery</Link></li>
+            <li><Link href="/shoes" className="hover:text-myOrange">Shoes</Link></li>
+            <li><Link href="/about Us" className="hover:text-myOrange">About US</Link></li>
+            <li><Link href="/contact" className="hover:text-myOrange">Contact</Link></li>
           </ul>
         </div>
 
@@ -75,29 +64,24 @@ const Navbar = () => {
           {/* Highlighted "Home" Link */}
           <li>
             <Link href="/">
-              <span className="font-bold text-myOrange">Home</span>
+              <span className="font-bold hover:text-myOrange">Home</span>
             </Link>
           </li>
           <li tabIndex={0}>
-            <Link href="#">Women</Link>
+            {/* "Women" Link with Dropdown Icon */}
+            <Link href="#">
+              <span className="hover:text-myOrange">Women</span> 
+              <AiOutlineDown className="ml-2 text-xl" />
+            </Link>
             <ul className="p-2 bg-slate-50 shadow-md">
-              <li>
-                <Link href="/tops">Tops</Link>
-              </li>
-              <li>
-                <Link href="/pants">Pants</Link>
-              </li>
+              <li><Link href="/tops" className="hover:text-myOrange">Tops</Link></li>
+              <li><Link href="/pants" className="hover:text-myOrange">Pants</Link></li>
             </ul>
           </li>
-          <li>
-            <Link href="/accessories">Accessories/Jewellery</Link>
-          </li>
-          <li>
-            <Link href="/shoes">Shoes</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          <li><Link href="/accessories" className="hover:text-myOrange">Accessories/Jewellery</Link></li>
+          <li><Link href="/shoes" className="hover:text-myOrange">Shoes</Link></li>
+          <li><Link href="/aboutUs" className="hover:text-myOrange">About us</Link></li>
+          <li><Link href="/contact" className="hover:text-myOrange">Contact</Link></li>
         </ul>
       </div>
 

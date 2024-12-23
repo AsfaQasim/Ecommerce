@@ -11,7 +11,7 @@ import {
   topProduct,
 } from "@/myproduct/product";
 
-// Define the Product interface
+
 interface Product {
   src: string;
   alt: string;
@@ -78,7 +78,7 @@ const ProductPage = () => {
                 title={item.title}
                 description={item.description}
                 price={item.price}
-                category={item.Category}
+                Category={item.Category}
                 slug={item.slug}
               />
             </Link>
